@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+   <title>currenreadings</title> 
+</head><meta name="viewport" content="width=device-width, initial-scale=1">  
+<style>
+.bg-img{  background-image: url("http://i64.tinypic.com/o5qook.jpg"); 
+ height: 635px; 
+ background-position:center;
+  background-repeat: no-repeat;  
+background-size: 100% 100%;
+}
+.datestyle{ 
+ position:absolute;
+  top: 135px; 
+ left:10px; 
+ }
+.timestyle{ 
+ position:absolute; 
+ top: 135px; 
+ left:200px; 
+ }
+.pgname{ 
+position:absolute;
+ top: 90px;
+ left:600px;
+ }
+.aboutbutton{ 
+position:absolute;
+ top: 120px; 
+left:10px; 
+}
+.helpbutton{ 
+position:absolute;
+ top: 120px; 
+left:90px;
+ }
+.logoutbutton{ 
+position:absolute;
+ top: 120px;
+ left:140px;
+ }
+.downloadbutton{
+ position:absolute; 
+top: 120px; right:80px;
+ }
+.settingbutton{ 
+ position:absolute; 
+top: 120px;
+ right: 10px; 
+ }
+.cmpname{ 
+position:relative; 
+top: 10px; 
+text-align:center; 
+ } 
+table{  
+ width: 100%; 
+  text-align: center; 
+  margin-left: 0;  
+ margin-right:0; 
+  border-spacing: 25px;
+}   
+</style> 
+  </head>  
+ <body> 
+  <div class="bg-img">
+<h1 class="cmpname">KVAR TECHNOLOGIES PVT. LTD.</h1>  
+ <h2 class="pgname">Current Readings</h2> 
+  <br><br><br> 
+  <h4 class="datestyle" id="date" style="text-align:left;">DATE : 2019-03-27  TIME :<h4 class="timestyle" id="time"></h4> 
+   <input class="aboutbutton"  type="button" value="About Us" onclick="window.location.href='/aboutus'"/>  
+  <input class="helpbutton"   type="button" value="Help" onclick="window.location.href='/help'"/>  
+  <input class="logoutbutton" type="button" value="Log Out" onclick="window.location.href='/'"/>  
+  <input class="downloadbutton" type="button" value="Download Data" onclick="window.location.href='/download_data'"/>  
+  <input class="settingbutton" type="button" value="Settings" onclick="window.location.href='/settings'"/> 
+   <table>  
+  <tr>    
+  <td>
+<h1>Pressure ( °C ) </h1>
+<h1><p id="channel1"></p></h1>
+</td>     
+ <td>
+<h1>Temperature ( °C ) </h1>
+<h1><p id="channel2"></p></h1>
+</td>      
+<td>
+<h1>Temperature ( °C ) </h1>
+<h1><p id="channel3"></p></h1>
+</td>      
+<td>
+<h1>Temperature ( °C ) </h1>
+<h1><p id="channel4"></p></h1>
+</td>     
+</tr>    
+ <tr>      
+<td>
+<h1>TemperTempe ( °C ) </h1><h1><p id="channel5"></p></h1>
+</td>     
+ <td>
+<h1>Temperature ( °C ) </h1><h1><p id="channel6"></p></h1>
+</td>     
+ <td><h1>Temperature ( °C ) </h1><h1><p id="channel7"></p></h1>
+</td>     
+ <td>
+<h1>Temperature ( °C ) </h1><h1><p id="channel8"></p></h1>
+</td>    
+ </tr>   
+ </table>
+<p align="center"> <input type="button" width="10" height="5" value="PRINT" onclick="printPage();"> 
+ </div>
+<script>
+var b = setInterval(function(){loadData("/update_curreent_readings_page",update_curreent_readings_page)},1000);
+function loadData(url, callback)
+{
+ var xhttp = new XMLHttpRequest(); 
+xhttp.onreadystatechange = function()
+{
+if(this.readyState == 4 && this.status == 200)
+{
+callback.apply(xhttp);
+ }
+}; 
+xhttp.open("POST", url, true); 
+ xhttp.send();
+} 
+function update_date()
+{
+ document.getElementById("date").innerHTML = this.responseText;
+ } function update_curreent_readings_page()
+{ 
+var res = this.responseText.split(',');
+ document.getElementById("time").innerHTML = res[0]; 
+var ch = ["channel1","channel2","channel3","channel4","channel5","channel6","channel7","channel8"]; 
+for (var i=1; i<9; i++){  document.getElementById(ch[i-1]).innerHTML = res[i];
+ } 
+}
+function update_time(){ document.getElementById("time").innerHTML = this.responseText;
+ } 
+ function printPage()
+ { 
+window.print();
+ }
+</script>
+</body>
+</html>

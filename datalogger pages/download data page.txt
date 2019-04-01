@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+ <title>DownloadData</title>
+ </head>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<style>
+.bg-img { 
+ background-image: url("http://i64.tinypic.com/o5qook.jpg");
+  height: 700px; 
+ background-position:center; 
+ background-repeat: no-repeat; 
+ background-size: 100% 100%;
+}
+.backbutton{ 
+ position:absolute;
+  right:10px;
+  top:  130px;
+  }
+.homebutton{
+   position:absolute; 
+ right: 60px;
+  top:  130px;
+  }
+.pgname{ 
+position:absolute; 
+top: 100px;
+ left:600px; 
+}
+.cmpname{ 
+position:relative; top: 10px; text-align:center;
+  }
+ </style>
+ <body>
+ <div class="bg-img" > 
+<h1 class="cmpname">KVAR TECHNOLOGIES PVT. LTD.</h1> 
+ <h2 class="pgname">Download Data</h2><br><br>
+<br>  
+<h3 style="text-align:center;">
+Select Date</h3>
+ <input class="backbutton" type="button" value="Back" onclick="window.location.href='/currentreadings'"/> 
+ <input class="homebutton" type="button" value="Home" onclick="window.location.href='/currentreadings'"/>  
+<form action="/download_data" method="post">   <p style="text-align:center;">From Date: <input type="date" name="frm_time" > 
+  To Date: 
+<input type="date" name="to_time"> 
+ <input type="submit" value="Submit"></p>
+</form>  <form action="/download_data" method="post">   
+  <pre style="text-align:center;"><select name="filename1" size="1"><option value=>
+- Please select a file -
+</option>
+<option value=K0903191.csv >
+ K0903191.csv 
+ </option>
+<option value=K1903191.csv >
+ K1903191.csv  </option>
+<option value=K2003191.csv >
+ K2003191.csv  </option>
+<option value=K2103191.csv >
+ K2103191.csv 
+ </option>
+<option value=K2203191.csv > K2203191.csv  </option>
+<option value=K2303191.csv > K2303191.csv  </option>
+<option value=K2403191.csv > K2403191.csv  </option>
+<option value=K2503191.csv > K2503191.csv  </option>
+<option value=K2603191.csv > K2603191.csv  </option>
+<option value=K2703191.csv > K2703191.csv  </option>
+</select>     <input type="submit" name ="downloadbutton" value="Download File">
+    <h3>Email List </h3>    Email ID 1:<input type="text" name="insta_mail_1" placeholder="E-mail Address" maxlength="50" value= >
+<br>   
+ Email ID 2:<input type="text" name="insta_mail_2" placeholder="E-mail Address" maxlength="50" value=>
+<br>   
+ Email ID 3:<input type="text" name="insta_mail_3" placeholder="E-mail Address" maxlength="50" value=>
+<br>   
+ Email ID 4:<input type="text" name="insta_mail_4" placeholder="E-mail Address" maxlength="50" value=>
+<br>  
+  Email ID 5:<input type="text" name="insta_mail_5" placeholder="E-mail Address" maxlength="50" value=>
+<br>  
+  Email ID 6:<input type="text" name="insta_mail_6" placeholder="E-mail Address" maxlength="50" value=>
+<br><br>  
+  <input type="submit"  name="instantSend"value="Send mail">  
+ </pre>
+</form> 
+ </div> 
+</body>
+</html>

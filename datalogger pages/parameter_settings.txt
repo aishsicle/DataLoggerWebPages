@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+   <title>parameter_settings</title> 
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+.aboutbutton{ 
+position:absolute;
+ left:10px;
+ top: 120px;
+ }
+.helpbutton{ position:absolute; 
+left:90px; 
+ top:120px;
+ }
+.backbutton{ 
+   position:absolute; 
+ right:10px;
+  top:  120px; 
+ }
+.homebutton{  position:absolute; 
+ right:60px; 
+ top:  120px;
+  }
+.pgname{
+ position:absolute;
+ top :90px; 
+left:600px;
+ }
+.cmpname{ 
+position:relative;
+ top: 10px;
+ text-align:center; 
+ }
+.bg-img { 
+ background-image: url("http://i64.tinypic.com/o5qook.jpg"); 
+ height: 635px;
+  background-position:center; 
+ background-repeat: no-repeat; 
+ background-size: 100% 100%;
+} 
+table{  
+width: 100%; 
+ text-align: center;
+  margin-left: 0; 
+ margin-right:0; 
+ border-spacing: 0px;  
+}  
+ </style> 
+  <body>
+   <div class="bg-img">
+<h1 class="cmpname">KVAR TECHNOLOGIES PVT. LTD.</h1> 
+ <h2 class="pgname">Parameter Settings</h2> 
+  <br><br><br> 
+  <input class="aboutbutton" type="button" value="About Us" onclick="window.location.href='/aboutus'"> 
+  <input class="helpbutton"  type="button" value="Help" onclick="window.location.href='/help'">  
+ <input class="backbutton" type="button" value="Back" onclick="window.location.href='/settings'"/>
+   <input class="homebutton" type="button" value="Home" onclick="window.location.href='/currentreadings'"/>
+   <h3 align="center"> Enter Channel Parameters <h3> 
+  <table> 
+   <form id="tableform" action='/parameter_settings' method="post">  
+  <tr>  
+    <td>
+<h3>CH[0]</h3>
+Name:
+<input type="text" name="name_channel1" placeholder="Name:Channel 1" maxlength="11" value=Pressure >
+<br>
+Unit:
+<input type="text" name="unit_channel1" maxlength="11" placeholder="Unit: Channel 1" value=°C>
+</td> 
+     <td>
+<h3>CH[1]</h3>
+Name:<input type="text" name="name_channel2" placeholder="Name:Channel 2" maxlength="11" value=Temperature >
+<br>
+Unit:
+<input type="text" name="unit_channel2" maxlength="11" placeholder="Unit: Channel 2" value=°C>
+</td> 
+     <td>
+<h3>CH[2]</h3>
+Name:
+<input type="text" name="name_channel3" placeholder="Name:Channel 3" maxlength="11" value=Temperature >
+<br>
+Unit:
+<input type="text" name="unit_channel3" maxlength="11" placeholder="Unit: Channel 3" value=°C>
+</td> 
+     <td>
+<h3>CH[3]</h3>
+Name:
+<input type="text" name="name_channel4" placeholder="Name:Channel 4" maxlength="11" value=Temperature >
+<br>
+Unit:
+<input type="text" name="unit_channel4" maxlength="11" placeholder="Unit: Channel 4" value=°C>
+</td> 
+   </tr> 
+   <tr>    
+  <td>
+<h3>CH[4]</h3>
+Name:
+<input type="text" name="name_channel5" placeholder="Name:Channel 5" maxlength="11" value=TemperTempe >
+<br>
+Unit:
+<input type="text" name="unit_channel5" maxlength="11" placeholder="Unit: Channel 5" value=°C>
+</td>   
+   <td>
+<h3>CH[5]</h3>
+Name:
+<input type="text" name="name_channel6" placeholder="Name:Channel 6" maxlength="11" value=Temperature >
+<br>
+Unit:
+<input type="text" name="unit_channel6" maxlength="11" placeholder="Unit: Channel 6" value=°C>
+</td>
+      <td>
+<h3>CH[6]</h3>
+Name:
+<input type="text" name="name_channel7" placeholder="Name:Channel 7" maxlength="11" value=Temperature >
+<br>
+Unit:
+<input type="text" name="unit_channel7" maxlength="11" placeholder="Unit: Channel 7" value=°C>
+</td>     
+ <td>
+<h3>CH[7]</h3>Name:<input type="text" name="name_channel8" placeholder="Name:Channel 8" maxlength="11" value=Temperature >
+<br>
+Unit:<input type="text" name="unit_channel8" maxlength="11" placeholder="Unit: Channel 8" value=°C></td>
+    </tr>   
+ </table> 
+   <p align="center"> <input type="submit" value="Save">
+ </p>  
+   </form> 
+</div>
+ </body>
+</html>

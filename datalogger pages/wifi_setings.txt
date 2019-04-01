@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html> 
+<head>   
+ <title>wifi_setting</title>
+ </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+.aboutbutton{
+ position:absolute;
+ left: 10px; 
+ top:  120px;
+ }
+.helpbutton{ 
+position:absolute;
+ left: 90px; 
+ top:  120px;
+ }
+.backbutton{ 
+ position:absolute;
+  right:40px;
+  top:  120px;
+  }
+.homebutton{  
+ position:absolute; 
+ right: 90px;
+  top:  120px;
+  }
+.pgname{ 
+ position:absolute; 
+top : 90px; 
+left:600px;
+ }
+.cmpname{
+ position:relative;
+ top: 10px;
+ text-align:center;
+  }
+.bg-img {
+  background-image: url("http://i64.tinypic.com/o5qook.jpg");
+  height: 635px; 
+ background-position:center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+} 
+</style>
+<div class="bg-img" >
+<h1 class="cmpname">KVAR TECHNOLOGIES PVT. LTD.</h1>
+<div style="text-align:center;"> 
+ <h2 class="pgname">Wi-Fi Settings</h2>
+<br><br><br><br>
+<h3>Available WiFi HotSpots</h3>
+<input class="aboutbutton" type="button" value="About Us" onclick="window.location.href='/aboutus'">
+<input class="helpbutton"  type="button" value="Help" onclick="window.location.href='/help'">
+<input class="backbutton" type="button" value="Back" onclick="window.location.href='/settings'">
+<input class="homebutton" type="button" value="Home" onclick="window.location.href='/currentreadings'">
+6 Networks found<br><br>1: ESP_85ED16 (-65) 
+<br>
+2: AMESH (-86)*
+<br>
+3: KVARTECH (-56)*
+<br>
+4: Ajinkya (-68)*
+<br>
+5: saffron (-88)*
+<br>
+6: D-Link_DIR-600M (-93)*
+<br>
+<br>
+<form action = "/wifi_settings" method = "post" >
+SSID:
+ <input type = "text" name = "w_ssid" maxlength ="20" value =  >
+<br>
+Password: 
+<input type = "password" name = "w_pwd" maxlength ="20"  value =  >
+<br><br>
+<input type="submit" value="submit" />
+<input type = "button"  onclick ="window.location.href = '/forget_wifi'"  value="Forget Network" >
+</form>
+</div>
+</div>
+</html>
