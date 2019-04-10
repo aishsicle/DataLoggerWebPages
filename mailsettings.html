@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+   <title>mail_settings</title>
+ </head>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<style>
+.aboutbutton{
+ position:absolute;
+ left: 10px; 
+ top:  120px;
+ }
+.helpbutton{ 
+position:absolute;
+ left: 90px; 
+ top:  120px; 
+}
+.backbutton{   
+ position:absolute;  
+right:10px; 
+ top:  120px;  
+}
+.homebutton{ 
+ position:absolute;
+  right: 60px;
+  top:  120px;
+  }
+.pgname{ 
+position:absolute; 
+top: 90px; 
+left:580px;
+ }
+.cmpname{ 
+position:relative; 
+top: 10px;
+ text-align:center;
+  }
+.bg-img { 
+ background-image: url("http://i64.tinypic.com/o5qook.jpg"); 
+ height: 635px;  background-position:center;
+  background-repeat: no-repeat; 
+ background-size: 100% 100%;
+}  
+</style> 
+ <body>
+  <div class="bg-img"> 
+ <h1 class="cmpname">KVAR TECHNOLOGIES PVT. LTD.</h1> 
+ <h2 class="pgname">E-mail Settings</h2> 
+ <input class="aboutbutton" type="button" value="About Us" onclick="window.location.href='/aboutus'"> 
+ <input class="helpbutton"  type="button" value="Help" onclick="window.location.href='/help'"> 
+ <input class="backbutton" type="button" value="Back" onclick="window.location.href='/settings'"> 
+ <input class="homebutton" type="button" value="Home" onclick="window.location.href='/currentreadings'"> 
+ <br><br><br><br> 
+  <div align="center">  
+    <form id="mailform" action='/mail_settings' method="post">  
+     <h3> Email Server Settings </h3>  
+       Email ID:   
+   <input type="text" name="mail_id" placeholder="E-mail Address"   maxlength="50" value="">
+<br>  
+       Email Password:
+<input type="password" name="mail_pass" placeholder="Password"   maxlength="50" value="">
+<br> 
+        Email Server:
+  <input type="text" name="mail_server" placeholder="Email Server" maxlength="50" value="">
+<br>  
+       Server Port:  
+ <input type="text" name="mail_port" placeholder="Server Port"    maxlength="50" value="">
+<br>     
+    <br><br>     
+  <h3>Email List </h3> 
+        Email ID 1:
+<input type="text" name="to_mail_1" placeholder="E-mail Address" maxlength="50" value="" >
+<br>   
+      Email ID 2:<input type="text" name="to_mail_2" placeholder="E-mail Address" maxlength="50" value=>
+<br>   
+      Email ID 3:<input type="text" name="to_mail_3" placeholder="E-mail Address" maxlength="50" value=>
+<br>   
+      Email ID 4:<input type="text" name="to_mail_4" placeholder="E-mail Address" maxlength="50" value= >
+<br> 
+        Email ID 5:<input type="text" name="to_mail_5" placeholder="E-mail Address" maxlength="50" value= >
+<br>       
+  Email ID 6:<input type="text" name="to_mail_6" placeholder="E-mail Address" maxlength="50" value= >
+<br>   
+    <p align="center"> 
+<input type="submit" value="Save"> 
+</p>    
+   </form>   
+ </div> 
+ </body>
+</html>

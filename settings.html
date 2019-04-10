@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+   <title>DataLogger</title>
+ </head>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+ <style>
+.bg-img {  
+background-image: url("http://i64.tinypic.com/o5qook.jpg");
+  height: 635px; 
+ background-position:center; 
+ background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.aboutbutton{ 
+position:absolute;
+ left: 10px; 
+}
+.helpbutton{
+ position:absolute; 
+left: 90px;
+ }
+.homebutton{ 
+ position:absolute; 
+ left: 150px; 
+ }
+.calSetbutton{
+ position:absolute;
+ right: 420px;
+ }
+.parambutton{ 
+ position:absolute; 
+ right: 280px; 
+ }
+.wifibutton{ 
+ position:absolute; 
+ right: 180px; 
+ }
+.mailbutton{  
+position:absolute; 
+ right: 80px;
+  }
+.logoutbutton{
+  position:absolute;
+  right: 10px; 
+ }
+.cmpname{
+ position:relative;
+ top: 10px; 
+text-align:center;
+  }
+.pgname{
+ position:absolute;
+ top: 90px;
+ left:600px;
+ }
+table{ 
+width:90%;
+  margin-left: 120px;
+  margin-right: 0;
+ border-spacing: 15px;
+}
+</style>
+<body>
+<div class="bg-img" >
+<h1 class="cmpname">KVAR TECHNOLOGIES PVT. LTD.</h1> 
+ <h2 class="pgname"> Settings</h2> 
+ <br><br><br>
+  <input class="calSetbutton" type="button" value="Calibration Settings" onclick="window.location.href='/calibration_settings'">  
+<input class="parambutton" type="button" value="Parameters Settings"  onclick="window.location.href='/parameter_settings'">  
+<input class="wifibutton" type="button"  value="WiFi Settings" onclick="window.location.href='/wifi_settings'">  
+  <input class="aboutbutton" type="button" value="About Us" onclick="window.location.href='/aboutus'">  
+  <input class="helpbutton"  type="button" value="Help" onclick="window.location.href='/help'"> 
+   <input class="homebutton" type="button"  value="Home" onclick="window.location.href='/currentreadings'">  
+  <input class="mailbutton" type="button"  value="Mail Settings" onclick="window.location.href='/mail_settings'"> 
+   <input class="logoutbutton" type="button" value="Log Out " onclick="window.location.href='/'"> 
+   <form id="form1" action='/settings' method="post">
+<br>  
+  <table id="table1">  
+  <tr>  
+  <td>Set Username:<br><input type="text"  name="usr1" placeholder="Set username" value=akshay maxlength="10"/></td> 
+    <td>DHCP:<br><input type="radio" name="dhcp" value="1" >ON<br><input type="radio" name="dhcp" value="0" checked>OFF</td> 
+    <td>Set Date:<br><input type="date"  name="localdate" value=2019-03-27 placeholder="Set Date" /></td>
+     </tr>  
+   <tr>  
+   <td>Set Password:<br><input type="password" name="pwd1" value=admin placeholder="Set password"  maxlength="10"/></td> 
+    <td>Set IP address:<br><input type="text" name="IP" value=192.168.131.199 placeholder="Set IP address"/></td> 
+    <td>Set Time:<br><input type="time" name="localtime" value=12:15:44 placeholder="Set Time" /></td>   
+  </tr>
+     <tr>
+     <td>Confirm Password:<br><input type="password" name="cpwd1" placeholder="Confirm password" maxlength="10" /></td>
+     <td>Set Gateway IP:<br><input type="text" name="gatewayip" value=192.168.131.1 placeholder="Set Gateway IP"/></td> 
+    <td>Set Log Interval:<br> <input type="number" name="logintM" value= 0 size="2" min="0" max="99"  placeholder="MM"> Min   <input type="number" name="logintS" value= 10 size="2" min="0" max="59"  placeholder="SS" >Sec</td>
+     </tr> 
+    <tr>   
+  <td>     <input type="radio" name="access_lvl" value="0"checked> Level 0<br> 
+    <input type="radio" name="access_lvl" value="1"> Level 1<br>  
+   <input type="radio" name="access_lvl" value="2"> Level 2<br> 
+    </td> 
+    <td>Set Subnet Mask:<br><input type="text" name="subnetmask" value=255.255.255.0 placeholder="Set Gateway IP"/></td>
+     <td>Set Logger Id:<br><input type="number" name="loggerid" placeholder="Set Id" min="1" min="0" max="9"  value=1 ></td> 
+    </tr>    
+ <td>
+</td>   
+  <td>Set DNS IP:<br><input type="text" name="dnsip" value=192.168.131.253 placeholder="Set DNS IP" /></td>
+</td> 
+    <td>Set Mail Interval:<br> <input type="number" name="mailIntH" value= 0 size="2" min="0" max="99"  placeholder="HH"> Hrs <input type="number" name="mailIntM" value= 15 size="2" min="0" max="59"  placeholder="MM" >Mins</td>
+     </tr>  
+   </table>
+   <br>
+     <center><input type="submit" value="Save" />
+ <input type="reset" value="Clear" />
+<center>  
+   </form>
+ </div>  
+   </body>  
+   </html>

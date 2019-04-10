@@ -1,0 +1,218 @@
+<html>
+<head> 
+ <title>KVAR Tech | Current Readings</title> 
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<link href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Playfair+Display|Raleway|Roboto" rel="stylesheet">
+
+<style type="text/css">
+
+  body {
+    height: 100%;
+
+    font-family: 'Raleway', sans-serif;
+  }
+
+ .navbar {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+    overflow:auto;
+  } 
+
+  .navbar.logo {
+    float: left;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    
+    height:100%;
+  }
+
+  .navbar {
+    width: 100%;
+    background-color: #555;
+    overflow: auto;
+  }
+
+  /* Navbar links */
+  .navbar a {
+    float: right;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    line-height: 25px;
+    font-size: 18px;
+  }
+
+  .navbar-right {
+    float: right;
+  }
+
+  /* Navbar links on mouse-over */
+  .navbar a:hover {
+    background-color: #000;
+  }
+
+  /* Current/active navbar link */
+  .active {
+    background-color: #4CAF50;
+  }
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+ transform: translate(-50%, -50%);
+  }
+
+  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  @footer {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+</style> 
+
+<body>
+
+  <div class="navbar">
+    <a href="#currentreadings" class="logo"><img src="KVAR.jpg" alt="KVAR Tech Logo" height="100"></a> 
+  
+  <div class="navbar-right">
+    <a href="#logout">Log Out</a>
+    <a href="#settings">Settings</a>   
+    <a href="#help">Help</a>
+    <a href="#about">About Us</a>
+    
+  </div>
+  </div>
+
+  <div class="main">
+    <h1>Current Readings</h1>
+
+  <div class="container">
+  <table>
+
+    <tr>    
+      <td>
+        <h1>Pressure (°C) </h1>
+        <h1><p id="channel1"></p></h1>
+      </td>  
+
+      <td>
+        <h1>Temperature (°C) </h1>
+        <h1><p id="channel2"></p></h1>
+      </td>
+
+      <td>
+        <h1>Temperature (°C) </h1>
+        <h1><p id="channel3"></p></h1>
+      </td>      
+
+      <td>
+        <h1>Temperature (°C) </h1>
+        <h1><p id="channel4"></p></h1>
+      </td>     
+    </tr>    
+
+    <tr>      
+      <td>
+        <h1>TemperTempe (°C) </h1>
+        <h1><p id="channel5"></p></h1>
+      </td>     
+
+      <td>
+        <h1>Temperature (°C) </h1>
+        <h1><p id="channel6"></p></h1>
+      </td>    
+
+      <td>
+        <h1>Temperature (°C) </h1><h1><p id="channel7"></p></h1>
+      </td>     
+      <td>
+        <h1>Temperature (°C) </h1><h1><p id="channel8"></p></h1>
+      </td>
+
+    </tr>   
+  
+  </table>
+ 
+  <p align="center"> <input type="button" width="10" height="5" value="PRINT" onclick="printPage();"> 
+ 
+  </div>
+
+  <script>
+    var b = setInterval(function(){loadData("/update_curreent_readings_page",update_curreent_readings_page)},1000);
+    function loadData(url, callback)
+    {
+     var xhttp = new XMLHttpRequest(); 
+     xhttp.onreadystatechange = function()
+     {
+      if(this.readyState == 4 && this.status == 200)
+      {
+        callback.apply(xhttp);
+      }
+    }; 
+    xhttp.open("POST", url, true); 
+    xhttp.send();
+  } 
+  function update_date()
+  {
+   document.getElementById("date").innerHTML = this.responseText;
+ } function update_curreent_readings_page()
+ { 
+  var res = this.responseText.split(',');
+  document.getElementById("time").innerHTML = res[0]; 
+  var ch = ["channel1","channel2","channel3","channel4","channel5","channel6","channel7","channel8"]; 
+  for (var i=1; i<9; i++){  document.getElementById(ch[i-1]).innerHTML = res[i];
+  } 
+}
+function update_time(){ document.getElementById("time").innerHTML = this.responseText;
+} 
+function printPage()
+{ 
+  window.print();
+}
+</script>
+
+
+<div class="footer">
+  <p>KVAR Technologies Private Limited.</p>
+
+</div>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
